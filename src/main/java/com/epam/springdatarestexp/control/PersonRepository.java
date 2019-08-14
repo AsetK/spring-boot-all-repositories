@@ -1,6 +1,8 @@
 package com.epam.springdatarestexp.control;
 
 import com.epam.springdatarestexp.entity.Person;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +16,8 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     @RestResource(path = "lname", rel = "lname") //Customize endpoint URL
     public List<Person> findByLastName(@Param("lName") String lastName);
+
+    public Page<Person> findAll(Pageable pageable);
 
     //If we need more sofisticated filtering, wich is not possible to achieve with combination of filtering parameters in the method name,
     // we can use all the power of JPA query language with @Query annotation
