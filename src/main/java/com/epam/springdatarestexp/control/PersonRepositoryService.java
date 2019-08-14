@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class PersonRepositoryService {
@@ -16,6 +18,10 @@ public class PersonRepositoryService {
     public Page<Person> findAll(Pageable pageable){
         someInterface.check();                      // Cheching how @RequiredArgsConstructor works on interface. There should be bean of class that implements this interface
         return personRepository.findAll(pageable);
+    }
+
+    public List<Person> findAll(){
+        return personRepository.findAll();
     }
 
 

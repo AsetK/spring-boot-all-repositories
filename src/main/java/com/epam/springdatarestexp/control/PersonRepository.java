@@ -12,12 +12,16 @@ import java.util.List;
 
 public interface PersonRepository extends CrudRepository<Person, Integer> {
 
-    public List<Person> findByFirstName(@Param("fName") String firstName); //@Param - parameter in url: http:......?fname=SomeName
+    public List<Person> findByFirstName(@Param("fName") String firstName); //@Param - parameter in url:   http://localhost:8080/persons/search/findByFirstName?fName=A
 
-    @RestResource(path = "lname", rel = "lname") //Customize endpoint URL
-    public List<Person> findByLastName(@Param("lName") String lastName);
+    @RestResource(path = "bylname", rel = "bylname") //Customize endpoint URL
+    public List<Person> findByLastName(@Param("lName") String lastName); // http://localhost:8080/persons/search/bylname?lName=L
+
+    public List<Person> findAll();
 
     public Page<Person> findAll(Pageable pageable);
+
+
 
     //If we need more sofisticated filtering, wich is not possible to achieve with combination of filtering parameters in the method name,
     // we can use all the power of JPA query language with @Query annotation
