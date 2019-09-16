@@ -31,7 +31,7 @@ public class PersonRepositoryTest {
         List<Person> personList = new ArrayList<>();
         allPerson.forEach(personList::add);
 
-        assertEquals(1, personList.size());
+        assertEquals(4, personList.size());
     }
 
     @Test
