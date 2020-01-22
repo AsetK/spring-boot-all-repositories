@@ -1,5 +1,6 @@
 package com.epam.springdatarestexp.control;
 
+import com.epam.springdatarestexp.control.repository.PersonSpringDataRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PersonEndpointTest {
 
     @Autowired
-    PersonRepository personRepository;
+    PersonSpringDataRepository personRepository;
 
     @Autowired
     private MockMvc mockMvc;
@@ -30,4 +31,6 @@ public class PersonEndpointTest {
                 .andExpect(jsonPath("$._embedded.persons[0]").exists())
                 .andExpect(jsonPath("$._embedded.persons[0].firstName").value("A"));
     }
+
+
 }

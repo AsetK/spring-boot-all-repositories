@@ -7,6 +7,6 @@ create table person (
 );
 
 insert into person (first_name, last_name) values ('A', 'K');
-insert into person (first_name, last_name) values ('A', 'L');
-insert into person (first_name, last_name) values ('B', 'K');
 insert into person (first_name, last_name) values ('B', 'L');
+insert into person (first_name, last_name) values ('C', 'M');
+insert into person (first_name, last_name) values ('D', 'N');

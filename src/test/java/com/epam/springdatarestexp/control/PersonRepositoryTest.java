@@ -1,5 +1,6 @@
 package com.epam.springdatarestexp.control;
 
+import com.epam.springdatarestexp.control.repository.PersonSpringDataRepository;
 import com.epam.springdatarestexp.entity.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +22,7 @@ import static org.junit.Assert.*;
 public class PersonRepositoryTest {
 
     @Autowired
-    PersonRepository personRepository;
+    PersonSpringDataRepository personRepository;
 
 
     @Test

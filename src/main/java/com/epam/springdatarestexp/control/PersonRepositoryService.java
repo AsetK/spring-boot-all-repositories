@@ -1,5 +1,6 @@
 package com.epam.springdatarestexp.control;
 
+import com.epam.springdatarestexp.control.repository.PersonSpringDataRepository;
 import com.epam.springdatarestexp.entity.Person;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -18,7 +19,7 @@ public class PersonRepositoryService {
 
     private final SomeInterface someInterface;      // Cheching how @RequiredArgsConstructor works on interface. There should be bean of class that implements this interface.
                                                     // This bean will be injected throw constructor(Spring can inject beans throw constructor parameters without @Autowired annotation)
-    private final PersonRepository personRepository;
+    private final PersonSpringDataRepository personRepository;
 
     public Page<Person> findAll(Pageable pageable){
         someInterface.check();                      // Cheching how @RequiredArgsConstructor works on interface. There should be bean of class that implements this interface
